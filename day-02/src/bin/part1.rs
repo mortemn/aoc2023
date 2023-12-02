@@ -6,7 +6,7 @@ fn main() {
     let input = &fs::read_to_string(file_path)
         .unwrap();
 
-    let result = parse(input);
+    println!("{}", parse(input));
 }
 
 fn parse(input: &str) -> usize {
@@ -18,7 +18,6 @@ fn parse(input: &str) -> usize {
     }
     for (i, e) in games.iter().enumerate() {
         if check_possible(e.to_vec()) {
-            println!("Game {} is possible", i+1);
             sum += i+1;
         }
     }
